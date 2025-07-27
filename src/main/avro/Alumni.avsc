@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "namespace": "avro.alumni",
+  "name": "AlumniSchemaDto",
+  "fields": [
+    {
+      "name": "id", "type": "long"
+    },
+    {
+      "name": "api_base_id", "type": "int"
+    },
+    {
+      "name": "degree_id", "type": "int"
+    },
+    {
+      "name": "memberships", "type":{"type": "array", "items": "int"}
+    }
+  ]
+}
