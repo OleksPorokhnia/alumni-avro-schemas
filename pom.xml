@@ -23,7 +23,7 @@
         <repository>
             <id>github</id>
             <name>GitHub Packages</name>
-            <url>https://maven.pkg.github.com/OleksPorokhnia/alumni-avro-schemas</url>
+            <url>https://github.com/OleksPorokhnia/alumni-avro-schemas/packages/2595533</url>
         </repository>
     </distributionManagement>
 
