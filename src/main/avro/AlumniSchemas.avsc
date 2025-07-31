@@ -136,19 +136,5 @@
             }
             }
         ]
-    },
-    {
-        "type": "record",
-        "name": "CompanyRecord",
-        "namespace": "org.acme.avro",
-        "fields": [
-            { "name": "id", "type": "int" },
-            { "name": "facultyNumber", "type": "int" },
-            { "name": "enrollmentDate", "type": { "type": "int", "logicalType": "date" } },
-            { "name": "dischargeDate", "type": { "type": "int", "logicalType": "date" } },
-            { "name": "positionName", "type": "string" },
-            { "name": "companyName", "type": "string" }
-        ]
     }
-
 ]
