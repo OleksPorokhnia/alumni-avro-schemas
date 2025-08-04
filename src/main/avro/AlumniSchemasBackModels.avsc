@@ -1,7 +1,7 @@
 [
     {
         "type": "record",
-        "namespace": "org.acme.avro",
+        "namespace": "org.acme.avro.back.model",
         "name": "AlumniGroupDto",
         "fields":[
             {
@@ -23,7 +23,7 @@
     },
     {
         "type": "record",
-        "namespace": "org.acme.avro",
+        "namespace": "org.acme.avro.back.model",
         "name": "AlumniGroupMembershipDto",
         "fields":[
             {
@@ -33,7 +33,7 @@
                 "name":"faculty_number", "type":"int"
             },
             {
-                "name":"group", "type":"org.acme.avro.AlumniGroupDto"
+                "name":"group", "type":"org.acme.avro.back.model.AlumniGroupDto"
             },
             {
                 "name": "average_score",
@@ -43,7 +43,7 @@
     },
     {
         "type": "record",
-        "namespace": "org.acme.avro",
+        "namespace": "org.acme.avro.back.model",
         "name": "AlumniDto",
         "fields": [
             {
@@ -96,21 +96,21 @@
                 "name": "memberships",
                 "type": {
                     "type": "array",
-                    "items": "org.acme.avro.AlumniGroupMembershipDto"
+                    "items": "org.acme.avro.back.model.AlumniGroupMembershipDto"
                 }
             }
         ]
     },
     {
         "type": "record",
-        "namespace": "org.acme.avro",
+        "namespace": "org.acme.avro.back.model",
         "name": "CompanyRecordDto",
         "fields":[
             {
                 "name":"id", "type":"int"
             },
             {
-                "name":"alumni", "type":"org.acme.avro.AlumniDto"
+                "name":"alumni", "type":"org.acme.avro.back.model.AlumniDto"
             },
             {
                 "name":"enrollment_date", "type": {
