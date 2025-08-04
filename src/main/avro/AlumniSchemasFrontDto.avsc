@@ -3,69 +3,24 @@
     "type": "record",
     "namespace": "org.acme.avro.front.dto",
     "name": "AlumniGroupMembershipFrontDto",
-    "fields":[
-      {
-        "name":"id", "type":"int"
-      },
-      {
-        "name":"faculty_number", "type":"int"
-      },
-      {
-        "name":"group_number", "type":"int"
-      },
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "faculty_number", "type": "int" },
+      { "name": "group_number", "type": "int" },
       {
         "name": "average_score",
-        "type": ["null", "double"], "default": null
+        "type": ["null", "double"],
+        "default": null
       }
     ]
   },
-  {
-        "type": "record",
-        "namespace": "org.acme.avro.back.model",
-        "name": "AlumniGroup",
-        "fields": [
-            {
-            "name": "id",
-            "type": "int"
-            },
-            {
-            "name": "faculty",
-            "type": "string"
-            },
-            {
-            "name": "groupNumber",
-            "type": "int"
-            },
-            {
-            "name": "graduationYear",
-            "type": "int"
-            },
-            {
-            "name": "speciality",
-            "type": "string"
-            },
-            {
-              "name": "memberships",
-              "type": {
-                  "type": "array",
-                  "items": "int"
-              }
-            }
-        ]
-    },
   {
     "type": "record",
     "namespace": "org.acme.avro.front.dto",
     "name": "AlumniFrontDto",
     "fields": [
-      {
-        "name": "faculty_number",
-        "type": "int"
-      },
-      {
-        "name": "full_name",
-        "type": "string"
-      },
+      { "name": "faculty_number", "type": "int" },
+      { "name": "full_name", "type": "string" },
       {
         "name": "birth_date",
         "type": ["null", { "type": "int", "logicalType": "date" }],
@@ -81,10 +36,7 @@
         "type": ["null", "string"],
         "default": null
       },
-      {
-        "name": "degree",
-        "type": "string"
-      },
+      { "name": "degree", "type": "string" },
       {
         "name": "faculty",
         "type": ["null", "string"],
@@ -92,20 +44,14 @@
       },
       {
         "name": "created_at",
-        "type": {
-          "type": "long",
-          "logicalType": "timestamp-millis"
-        }
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
       },
       {
         "name": "updated_at",
-        "type": {
-          "type": "long",
-          "logicalType": "timestamp-millis"
-        }
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
       },
       {
-        "name": "memberships_id",
+        "name": "membership_ids",
         "type": {
           "type": "array",
           "items": "int"
@@ -117,39 +63,24 @@
     "type": "record",
     "namespace": "org.acme.avro.front.dto",
     "name": "CompanyRecordFrontDto",
-    "fields":[
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "alumni_faculty_number", "type": "int" },
       {
-        "name":"id", "type":"int"
+        "name": "enrollment_date",
+        "type": { "type": "int", "logicalType": "date" }
       },
       {
-        "name":"alumni_faculty_number", "type":"int"
-      },
-      {
-        "name":"enrollment_date", "type": {
-        "type":"long",
-        "logicalType":"date"
-      }
-      },
-      {
-        "name":"discharge_date",
-        "type": ["null", { "type":"long", "logicalType":"date" }],
+        "name": "discharge_date",
+        "type": ["null", { "type": "int", "logicalType": "date" }],
         "default": null
       },
+      { "name": "position", "type": "string" },
+      { "name": "company", "type": "string" },
       {
-        "name":"position","type":"string"
-      },
-      {
-        "name":"company","type":"string"
-      },
-      {
-        "name":"created_at", "type": {
-        "type":"long",
-        "logicalType":"timestamp-millis"
-      }
+        "name": "created_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
       }
     ]
-  },
-  {
-
   }
 ]

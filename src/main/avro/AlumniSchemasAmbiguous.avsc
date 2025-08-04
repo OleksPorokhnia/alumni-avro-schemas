@@ -1,71 +1,48 @@
+// alumnischemasambiguous.avsc
 [
-
-    {
-        "type": "record",
-        "namespace": "org.acme.avro.ambiguous.model",
-        "name": "AlumniGroupDto",
-        "fields":[
-            {
-                "name":"id", "type":"int"
-            },
-            {
-                "name":"faculty", "type":"string"
-            },
-            {
-                "name":"group_number", "type":"int"
-            },
-            {
-                "name":"graduation_year", "type":"int"
-            },
-            {
-                "name":"speciality_name", "type":"string"
-            }
-        ]
-    },
-    {
-        "type": "record",
-        "name": "Degree",
-        "namespace": "org.acme.avro.ambiguous.model",
-        "fields": [
-            {
-            "name": "id",
-            "type": "int"
-            },
-            {
-            "name": "degreeName",
-            "type": "string"
-            }
-        ]
-    },
-    {
-        "type": "record",
-        "name": "Speciality",
-        "namespace": "org.acme.avro.ambiguous.model",
-        "fields": [
-            {
-            "name": "id",
-            "type": "int"
-            },
-            {
-            "name": "specialityName",
-            "type": "string"
-            }
-        ]
-    },
-    {
-        "type": "record",
-        "name": "Faculty",
-        "namespace": "org.acme.avro.ambiguous.model",
-        "fields": [
-            {
-            "name": "id",
-            "type": "int"
-            },
-            {
-            "name": "facultyName",
-            "type": "string"
-            }
-        ]
-    }
-
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.ambiguous.model",
+    "name": "AlumniGroupDto",
+    "fields": [
+      { "name": "id", "type": "int" },
+      {
+        "name": "faculty",
+        "type": "org.acme.avro.ambiguous.model.Faculty"
+      },
+      { "name": "groupNumber", "type": "int" },
+      { "name": "graduationYear", "type": "int" },
+      {
+        "name": "speciality",
+        "type": "org.acme.avro.ambiguous.model.Speciality"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "Degree",
+    "namespace": "org.acme.avro.ambiguous.model",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "degreeName", "type": "string" }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "Speciality",
+    "namespace": "org.acme.avro.ambiguous.model",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "specialityName", "type": "string" }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "Faculty",
+    "namespace": "org.acme.avro.ambiguous.model",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "facultyName", "type": "string" }
+    ]
+  }
 ]
