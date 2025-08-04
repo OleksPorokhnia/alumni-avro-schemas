@@ -2,28 +2,6 @@
     {
         "type": "record",
         "namespace": "org.acme.avro.back.model",
-        "name": "AlumniGroupDto",
-        "fields":[
-            {
-                "name":"id", "type":"int"
-            },
-            {
-                "name":"faculty", "type":"string"
-            },
-            {
-                "name":"group_number", "type":"int"
-            },
-            {
-                "name":"graduation_year", "type":"int"
-            },
-            {
-                "name":"speciality_name", "type":"string"
-            }
-        ]
-    },
-    {
-        "type": "record",
-        "namespace": "org.acme.avro.back.model",
         "name": "AlumniGroupMembershipDto",
         "fields":[
             {
@@ -38,6 +16,40 @@
             {
                 "name": "average_score",
                 "type": ["null", "double"], "default": null
+            }
+        ]
+    },
+    {
+        "type": "record",
+        "namespace": "org.acme.avro.back.model",
+        "name": "AlumniGroup",
+        "fields": [
+            {
+            "name": "id",
+            "type": "int"
+            },
+            {
+            "name": "faculty",
+            "type": "org.acme.avro.ambiguous.model.Faculty"
+            },
+            {
+            "name": "groupNumber",
+            "type": "int"
+            },
+            {
+            "name": "graduationYear",
+            "type": "int"
+            },
+            {
+            "name": "speciality",
+            "type": "org.acme.avro.ambiguous.model.Speciality"
+            },
+            {
+            "name": "memberships",
+            "type": {
+                "type": "array",
+                "items": "int"
+            }
             }
         ]
     },
@@ -71,11 +83,12 @@
             },
             {
                 "name": "degree",
-                "type": "string"
+                "type": "org.acme.avro.ambiguous.model.Degree",
+                "default": null
             },
             {
                 "name": "faculty",
-                "type": ["null", "string"],
+                "type": "org.acme.avro.ambiguous.model.Faculty",
                 "default": null
             },
             {

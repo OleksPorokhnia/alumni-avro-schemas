@@ -2,28 +2,6 @@
   {
     "type": "record",
     "namespace": "org.acme.avro.front.dto",
-    "name": "AlumniGroupFrontDto",
-    "fields":[
-      {
-        "name":"id", "type":"int"
-      },
-      {
-        "name":"faculty", "type":"string"
-      },
-      {
-        "name":"group_number", "type":"int"
-      },
-      {
-        "name":"graduation_year", "type":"int"
-      },
-      {
-        "name":"speciality_name", "type":"string"
-      }
-    ]
-  },
-  {
-    "type": "record",
-    "namespace": "org.acme.avro.front.dto",
     "name": "AlumniGroupMembershipFrontDto",
     "fields":[
       {
@@ -41,6 +19,40 @@
       }
     ]
   },
+  {
+        "type": "record",
+        "namespace": "org.acme.avro.back.model",
+        "name": "AlumniGroup",
+        "fields": [
+            {
+            "name": "id",
+            "type": "int"
+            },
+            {
+            "name": "faculty",
+            "type": "string"
+            },
+            {
+            "name": "groupNumber",
+            "type": "int"
+            },
+            {
+            "name": "graduationYear",
+            "type": "int"
+            },
+            {
+            "name": "speciality",
+            "type": "string"
+            },
+            {
+              "name": "memberships",
+              "type": {
+                  "type": "array",
+                  "items": "int"
+              }
+            }
+        ]
+    },
   {
     "type": "record",
     "namespace": "org.acme.avro.front.dto",
@@ -136,5 +148,8 @@
       }
       }
     ]
+  },
+  {
+
   }
 ]
