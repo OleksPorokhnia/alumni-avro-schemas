@@ -93,7 +93,7 @@
         }
       },
       {
-        "name": "memberships",
+        "name": "memberships_id",
         "type": {
           "type": "array",
           "items": "int"
@@ -110,7 +110,7 @@
         "name":"id", "type":"int"
       },
       {
-        "name":"alumni_faculty", "type":"int"
+        "name":"alumni_faculty_number", "type":"int"
       },
       {
         "name":"enrollment_date", "type": {
