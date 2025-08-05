@@ -1,4 +1,7 @@
-[
+[ 
+
+  // AMBIGUOUS
+
   {
     "type": "record",
     "namespace": "org.acme.avro.ambiguous",
@@ -162,7 +165,7 @@
   },
   {
     "type": "record",
-    "namespace": "org.acme.avro.front.dto",
+    "namespace": "org.acme.avro.front",
     "name": "AlumniGroupMembershipFrontDto",
     "fields": [
       { "name": "id", "type": "int" },
@@ -177,7 +180,7 @@
   },
   {
     "type": "record",
-    "namespace": "org.acme.avro.front.dto",
+    "namespace": "org.acme.avro.front",
     "name": "AlumniFrontDto",
     "fields": [
       { "name": "faculty_number", "type": "int" },
@@ -222,7 +225,7 @@
   },
   {
     "type": "record",
-    "namespace": "org.acme.avro.front.dto",
+    "namespace": "org.acme.avro.front",
     "name": "CompanyRecordFrontDto",
     "fields": [
       { "name": "id", "type": "int" },
