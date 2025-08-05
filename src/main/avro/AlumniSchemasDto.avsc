@@ -1,0 +1,247 @@
+[
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.ambiguous",
+    "name": "AlumniGroupDtoSimplified",
+    "fields": [
+      { "name": "id", "type": "int" },
+      {
+        "name": "faculty",
+        "type": "org.acme.avro.ambiguous.FacultyDto"
+      },
+      { "name": "groupNumber", "type": "int" },
+      { "name": "graduationYear", "type": "int" },
+      {
+        "name": "speciality",
+        "type": "org.acme.avro.ambiguous.SpecialityDto"
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "DegreeDto",
+    "namespace": "org.acme.avro.ambiguous",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "degreeName", "type": "string" }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "SpecialityDto",
+    "namespace": "org.acme.avro.ambiguous",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "specialityName", "type": "string" }
+    ]
+  },
+  {
+    "type": "record",
+    "name": "FacultyDto",
+    "namespace": "org.acme.avro.ambiguous",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "facultyName", "type": "string" }
+    ]
+  },
+    {
+    "type": "record",
+    "namespace": "org.acme.avro.back",
+    "name": "AlumniGroupMembershipDto",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "faculty_number", "type": "int" },
+      { "name": "group", "type": "org.acme.avro.back.AlumniGroupBackDto" },
+      {
+        "name": "average_score",
+        "type": ["null", "double"],
+        "default": null
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.back",
+    "name": "AlumniGroupBackDto",
+    "fields": [
+      { "name": "id", "type": "int" },
+      {
+        "name": "faculty",
+        "type": "org.acme.avro.ambiguous.FacultyDto"
+      },
+      { "name": "groupNumber", "type": "int" },
+      { "name": "graduationYear", "type": "int" },
+      {
+        "name": "speciality",
+        "type": "org.acme.avro.ambiguous.SpecialityDto"
+      },
+      {
+        "name": "membershipIds",
+        "type": {
+          "type": "array",
+          "items": "int"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.back",
+    "name": "AlumniDto",
+    "fields": [
+      { "name": "faculty_number", "type": "int" },
+      { "name": "full_name", "type": "string" },
+      {
+        "name": "birth_date",
+        "type": ["null", { "type": "int", "logicalType": "date" }],
+        "default": null
+      },
+      {
+        "name": "facebook_url",
+        "type": ["null", "string"],
+        "default": null
+      },
+      {
+        "name": "linkedin_url",
+        "type": ["null", "string"],
+        "default": null
+      },
+      {
+        "name": "degree",
+        "type": ["null", "org.acme.avro.ambiguous.DegreeDto"],
+        "default": null
+      },
+      {
+        "name": "faculty",
+        "type": ["null","org.acme.avro.ambiguous.FacultyDto"],
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
+      },
+      {
+        "name": "updated_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
+      },
+      {
+        "name": "memberships",
+        "type": {
+          "type": "array",
+          "items": "org.acme.avro.back.AlumniGroupMembershipDto"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.back",
+    "name": "CompanyRecordDto",
+    "fields": [
+      { "name": "id", "type": "int" },
+      {
+        "name": "alumni",
+        "type": "org.acme.avro.back.AlumniDto"
+      },
+      {
+        "name": "enrollment_date",
+        "type": { "type": "int", "logicalType": "date" }
+      },
+      {
+        "name": "discharge_date",
+        "type": ["null", { "type": "int", "logicalType": "date" }],
+        "default": null
+      },
+      { "name": "position", "type": "string" },
+      { "name": "company", "type": "string" },
+      {
+        "name": "created_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.front.dto",
+    "name": "AlumniGroupMembershipFrontDto",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "faculty_number", "type": "int" },
+      { "name": "group_number", "type": "int" },
+      {
+        "name": "average_score",
+        "type": ["null", "double"],
+        "default": null
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.front.dto",
+    "name": "AlumniFrontDto",
+    "fields": [
+      { "name": "faculty_number", "type": "int" },
+      { "name": "full_name", "type": "string" },
+      {
+        "name": "birth_date",
+        "type": ["null", { "type": "int", "logicalType": "date" }],
+        "default": null
+      },
+      {
+        "name": "facebook_url",
+        "type": ["null", "string"],
+        "default": null
+      },
+      {
+        "name": "linkedin_url",
+        "type": ["null", "string"],
+        "default": null
+      },
+      { "name": "degree", "type": "string" },
+      {
+        "name": "faculty",
+        "type": ["null", "string"],
+        "default": null
+      },
+      {
+        "name": "created_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
+      },
+      {
+        "name": "updated_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
+      },
+      {
+        "name": "membership_ids",
+        "type": {
+          "type": "array",
+          "items": "int"
+        }
+      }
+    ]
+  },
+  {
+    "type": "record",
+    "namespace": "org.acme.avro.front.dto",
+    "name": "CompanyRecordFrontDto",
+    "fields": [
+      { "name": "id", "type": "int" },
+      { "name": "alumni_faculty_number", "type": "int" },
+      {
+        "name": "enrollment_date",
+        "type": { "type": "int", "logicalType": "date" }
+      },
+      {
+        "name": "discharge_date",
+        "type": ["null", { "type": "int", "logicalType": "date" }],
+        "default": null
+      },
+      { "name": "position", "type": "string" },
+      { "name": "company", "type": "string" },
+      {
+        "name": "created_at",
+        "type": { "type": "long", "logicalType": "timestamp-millis" }
+      }
+    ]
+  }
+]
