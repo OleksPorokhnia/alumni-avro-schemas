@@ -1,7 +1,4 @@
 [ 
-
-  // AMBIGUOUS
-
   {
     "type": "record",
     "namespace": "org.acme.avro.ambiguous",
