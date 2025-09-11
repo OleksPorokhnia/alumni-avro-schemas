@@ -92,11 +92,6 @@
       { "name": "faculty_number", "type": "int" },
       { "name": "full_name", "type": "string" },
       {
-        "name": "email",
-        "type": ["null", "string"],
-        "default": null
-      },
-      {
         "name": "birth_date",
         "type": ["null", { "type": "int", "logicalType": "date" }],
         "default": null
@@ -187,11 +182,6 @@
     "fields": [
       { "name": "faculty_number", "type": "int" },
       { "name": "full_name", "type": "string" },
-      {
-        "name": "email",
-        "type": ["null", "string"],
-        "default": null
-      },
       {
         "name": "birth_date",
         "type": ["null", { "type": "int", "logicalType": "date" }],
